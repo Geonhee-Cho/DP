@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="/javascripts/jquery-1.11.2.min.js"></script>
+  <script>
+    $(function () {
+      $('#btn_join').on('click', function () {
+        if($('#id').val() == ""){
+          alert('아이디를 꼭 입력하세요!');
+          $('#id').focus();
+          return;
+        }
+        if($('#passwd').val() == ""){
+          alert('패스워드를 꼭 입력하세요!');
+          $('#passwd').focus();
+          return;
+        }
+        if($('#name').val() == ""){
+          alert('이름을 꼭 입력하세요!');
+          $('#name').focus();
+          return;
+        }
+        if($('#email').val() == ""){
+          alert('이메일을 꼭 입력하세요!');
+          $('#email').focus();
+          return;
+        }
+        if($('#tel2').val() == ""){
+          alert('전화번호를 정확히 입력해주세요!');
+          $('#tel2').focus();
+          return;
+        }
+        if($('#tel3').val() == ""){
+          alert('전화번호를 정확히 입력해주세요!');
+          $('#tel3').focus();
+          return;
+        }
+        var tel = $('#tel1').val() + "-" + $('#tel2').val() + "-" + $('#tel3').val();
+        $('#tel').val(tel);
+
+        if($('#address').val() == ""){
+          alert('주소를 꼭 입력해주세요!');
+          $('#address').focus();
+          return;
+        }
+
+        if($('#birth').val() == ""){
+          alert('생일을 꼭 입력해주세요!');
+          $('#birth').focus();
+          return;
+        }else if($('#birth').val().length != 8) {
+          alert('생일 8자리를 꼭 입력해주세요!');
+          $('#birth').val("");
+          $('#birth').focus();
+          return;
+        }else if( isNaN( $('#birth').val() ) ){
+          alert('생일은 숫자로 꼭 입력해주세요!');
+          $('#birth').val("");
+          $('#birth').focus();
+          return;
+        }
+
+        $('#joinform').submit();
+      });
+    });
+  </script>
+</head>
+<body>
+
+
+  <table class="type09">
+    <thead>
+    <tr>
+        <th scope="cols">이름</th>
+        <th scope="cols">이메일</th>
+        <th scope="cols">전화번호</th>
+        <th scope="cols">주소</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">항목명</th>
+        <td>내용이 들어갑니다.</td>
+        <td>내용이 들어갑니다.</td>
+        <td>내용이 들어갑니다.</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <input type="reset" value="뒤로" class="btn btn-primary" onclick="history.back();"/>
+</body>
+</html>
